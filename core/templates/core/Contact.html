@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+<body>
+    <h1>Contact</h1>
+    <p>
+        <a href="{% url 'core:home' %}">Home</a>
+        <br>
+        <a href="{% url 'core:branches' %}">Branches</a>
+        <br>
+        <a href="{% url 'core:coaches' %}">Coaches</a>
+        <br>
+        <a href="{% url 'core:classes' %}">classes</a>
+        <br>
+        <a href="{% url 'core:contact' %}">contact</a>
+        <br>
+        <a href="{% url 'core:membership_plans' %}">membership_plans</a>  
+        <br>
+    </p>
+    <p>
+        <form action="{% url 'core:support_process' %}" method ="post">
+            {% csrf_token %}
+            <label for ="txt_email">Email</label>
+            <input type="email" id="txt_email" name="email">
+
+            <label for="txt_date">Date</label>
+            <input type="date" id="txt_date" name="txt_date">
+
+            <label for="txt_message">Message</label>
+            <textarea id="txt_message" name="txt_message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </p>
+</body>
+</html>
